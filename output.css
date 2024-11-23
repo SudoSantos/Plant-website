@@ -598,12 +598,20 @@ video {
   position: absolute;
 }
 
+.relative{
+  position: relative;
+}
+
 .-left-5{
   left: -1.25rem;
 }
 
 .-right-10{
   right: -2.5rem;
+}
+
+.-top-10{
+  top: -2.5rem;
 }
 
 .-top-5{
@@ -626,8 +634,16 @@ video {
   left: 0;
 }
 
+.right-0{
+  right: 0px;
+}
+
 .top-0{
   top: 0px;
+}
+
+.-top-8{
+  top: -2rem;
 }
 
 .z-50{
@@ -638,8 +654,16 @@ video {
   display: flex;
 }
 
+.hidden{
+  display: none;
+}
+
 .h-16{
   height: 4rem;
+}
+
+.h-64{
+  height: 16rem;
 }
 
 .min-h-\[80vh\]{
@@ -654,9 +678,59 @@ video {
   width: 100%;
 }
 
+.w-64{
+  width: 16rem;
+}
+
 .rotate-90{
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes move{
+  50%{
+    transform: translateY(-1rem);
+  }
+}
+
+.animate-movingY{
+  animation: move 3s linear infinite;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotating{
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes scaleUp{
+  0%{
+    transform: scale(0.8);
+  }
+
+  50%{
+    transform: scale(1.2);
+  }
+
+  100%{
+    transform: scale(0.8);
+  }
+}
+
+.animate-scalingUp{
+  animation: scaleUp 3s linear infinite;
 }
 
 .cursor-pointer{
@@ -714,9 +788,29 @@ video {
   font-family: Lobster, sans-serif;
 }
 
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-slate-300{
@@ -727,6 +821,10 @@ video {
 .text-yellow-500{
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+
+.opacity-30{
+  opacity: 0.3;
 }
 
 .opacity-90{
@@ -824,6 +922,16 @@ h1{
   background-color: transparent;
 }
 
+.btn_outline:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-yellow-500:hover{
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+
 @media (min-width: 340px){
   .sm\:h-20{
     height: 5rem;
@@ -844,9 +952,19 @@ h1{
   }
 }
 
+@media (min-width: 540px){
+  .md\:gap-4{
+    gap: 1rem;
+  }
+}
+
 @media (min-width: 768px){
   .lg\:static{
     position: static;
+  }
+
+  .lg\:block{
+    display: block;
   }
 
   .lg\:hidden{
@@ -856,6 +974,10 @@ h1{
   .lg\:min-h-fit{
     min-height: -moz-fit-content;
     min-height: fit-content;
+  }
+
+  .lg\:w-1\/2{
+    width: 50%;
   }
 
   .lg\:w-auto{
@@ -868,5 +990,27 @@ h1{
 
   .lg\:bg-transparent{
     background-color: transparent;
+  }
+
+  .lg\:pt-10{
+    padding-top: 2.5rem;
+  }
+
+  .lg\:pt-5{
+    padding-top: 1.25rem;
+  }
+}
+
+@media (min-width: 1180px){
+  .xl\:bottom-12{
+    bottom: 3rem;
+  }
+
+  .xl\:top-5{
+    top: 1.25rem;
+  }
+
+  .xl\:pt-10{
+    padding-top: 2.5rem;
   }
 }

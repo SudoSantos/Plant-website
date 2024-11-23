@@ -41,3 +41,7 @@ h1{
 .btn_outline{
   @apply bg-transparent;
 }
+
+.btn_outline:hover{
+  @apply bg-yellow-500;
+}
